@@ -1,0 +1,48 @@
+html {
+    background-color: white;
+  }
+  
+  body {
+    color: #333;
+  }
+  
+  ::selection {
+    background: #222;
+    color: white;
+  }
+  
+  h1 {
+    color: #222;
+  }
+  
+  .quote {
+    color: #666;
+  }
+  
+  .quote-icon {
+    color: #ccc;
+  }
+  
+  .quote-line {
+    background: #eee;
+  }
+  
+  a {
+    color: #333;
+  }
+  
+  .links a {
+    border-bottom-color: #999;
+  }
+  
+  .links a:hover {
+    border-bottom-color: #333;
+  }
+  
+  .location {
+    color: #666;
+  }
+  
+  .relocating {
+    color: #ccc;
+  }
