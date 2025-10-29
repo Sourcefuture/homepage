@@ -1,0 +1,209 @@
+/* 全局重置与盒模型 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji";
+    color: #f1f1f1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: color 0.6s;
+    background: transparent;
+}
+
+canvas#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    display: block;
+}
+
+/* 头像 */
+.avatar {
+    width: 120px;
+    /* 稍大一些，更醒目 */
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: transform .3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.08);
+}
+
+/* 标题 */
+h1 {
+    margin-top: 35px;
+    /* 调整间距 */
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: color .6s;
+    text-align: center;
+}
+
+/* 语录 */
+
+/* 引语部分 */
+.quote {
+    max-width: 650px;
+    text-align: center;
+    margin-top: 30px 0;
+    font-style: italic;
+    line-height: 1.6;
+    opacity: .9;
+    transition: color .6s;
+    position: relative;
+    /* 用于定位双引号 */
+    padding: 20px 0;
+    /* 上下加点内边距 */
+}
+
+.quote-line {
+    margin: 20px auto;
+    width: 580px;
+    background: #242836;
+    display: block;
+    position: relative;
+    height: 1px;
+    transition: all .3s ease;
+    /* color: #004cff; */
+    background: #363636;
+}
+
+.quote-icon-start {
+    opacity: 1;
+    top: 47px;
+    color: #3F4656;
+    left: 0;
+    position: absolute;
+    color: #99A3BA;
+}
+
+.quote-icon-end {
+    opacity: 1;
+    bottom: 45px;
+    color: #3F4656;
+    right: 0;
+    position: absolute;
+    color: #99A3BA;
+}
+
+.author {
+    margin-top: 15px;
+    /* 增加与语录间距 */
+    font-size: 1em;
+    color: #aaa;
+    transition: color .6s;
+}
+
+/* 链接 */
+.links {
+    display: flex;
+    gap: 25px;
+    /* 间距更大 */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: #f1f1f1;
+    border-bottom: 1px dotted #888;
+    transition: all .3s ease;
+}
+
+.links a:hover {
+    color: #9fd3ff;
+    border-bottom: 1px solid #9fd3ff;
+}
+
+/* 位置 */
+.location {
+    margin-top: 40px;
+    font-size: .95em;
+    color: #aaa;
+    transition: color .6s;
+}
+
+.location i {
+    font-size: 16px;
+    margin-right: 8px;
+    /* color: #99A3BA; */
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* 白天模式 */
+body.light {
+    color: #222;
+}
+
+body.light .links a {
+    color: #222;
+    border-bottom: 1px dotted #888;
+}
+
+body.light .links a:hover {
+    color: #0066cc;
+    border-bottom: 1px solid #0066cc;
+}
+
+body.light .author,
+body.light .location {
+    color: #555;
+}
+
+body.light .avatar {
+    border-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light .theme-toggle {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.light .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
